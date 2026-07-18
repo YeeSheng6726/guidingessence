@@ -2,6 +2,9 @@ import Image from "next/image";
 import { ClipboardCheck, HeartHandshake, RefreshCw, Route, Scale, Unplug } from "lucide-react";
 import MotionController from "./motion";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${basePath}${path}`;
+
 const navItems = [
   { label: "Why us", href: "#why-us" },
   { label: "Journey", href: "#journey" },
@@ -123,7 +126,7 @@ function Header() {
     <header className="site-header">
       <div className="shell nav-wrap">
         <a className="brand" href="#top" aria-label="Guiding Essence home">
-          <Image src="/logo.png" alt="Guiding Essence" width={92} height={92} priority />
+          <Image src={assetPath("/logo.png")} alt="Guiding Essence" width={92} height={92} priority />
           <span>Guiding Essence</span>
         </a>
         <nav aria-label="Main navigation">
@@ -152,7 +155,7 @@ function Hero() {
           <a className="button button-primary" href="#contact">Talk to Us <Arrow /></a>
         </div>
         <figure className="hero-media gsap-hero-media" data-gsap>
-          <Image src="/assets/hero/guiding-team.png" alt="A small leadership team working together around a table" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
+          <Image src={assetPath("/assets/hero/guiding-team.png")} alt="A small leadership team working together around a table" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
         </figure>
       </div>
       <div className="shell confidence-line">
@@ -173,7 +176,7 @@ function Shift() {
       <div className="shell change-grid" aria-label="A visual comparison of workplace approaches">
         <article className="change-card change-card-fragmented">
           <figure className="change-image gsap-media">
-            <Image src="/assets/generated/workplace-fragmented-malaysia.webp" alt="A Malaysian team managing fragmented information across several devices" fill sizes="(min-width: 801px) 50vw, 100vw" />
+            <Image src={assetPath("/assets/generated/workplace-fragmented-malaysia.webp")} alt="A Malaysian team managing fragmented information across several devices" fill sizes="(min-width: 801px) 50vw, 100vw" />
           </figure>
           <div className="change-caption">
             <span className="change-icon" aria-hidden="true"><Unplug size={22} strokeWidth={1.75} /></span>
@@ -182,7 +185,7 @@ function Shift() {
         </article>
         <article className="change-card change-card-aligned">
           <figure className="change-image gsap-media">
-            <Image src="/assets/generated/workplace-aligned-malaysia.webp" alt="A Malaysian team collaborating confidently around one shared workflow" fill sizes="(min-width: 801px) 50vw, 100vw" />
+            <Image src={assetPath("/assets/generated/workplace-aligned-malaysia.webp")} alt="A Malaysian team collaborating confidently around one shared workflow" fill sizes="(min-width: 801px) 50vw, 100vw" />
           </figure>
           <div className="change-caption">
             <span className="change-icon" aria-hidden="true"><Route size={22} strokeWidth={1.75} /></span>
@@ -224,7 +227,7 @@ function Purpose() {
       <div className="shell purpose-grid">
         <figure className="purpose-image gsap-section-reveal" data-gsap>
           <Image
-            src="/assets/generated/vision-mission-malaysia.webp"
+            src={assetPath("/assets/generated/vision-mission-malaysia.webp")}
             alt="A diverse Malaysian team coordinating work inside a growing local business"
             fill
             sizes="(min-width: 801px) 56vw, 100vw"
@@ -259,7 +262,7 @@ function Journey() {
         {steps.map((step, index) => (
           <li key={step.title} className="journey-step" data-gsap>
             <figure className="journey-step-media gsap-media">
-              <Image src={step.image} alt={step.alt} fill sizes={index === 0 ? "(min-width: 801px) 60vw, 100vw" : "(min-width: 801px) 40vw, 100vw"} />
+              <Image src={assetPath(step.image)} alt={step.alt} fill sizes={index === 0 ? "(min-width: 801px) 60vw, 100vw" : "(min-width: 801px) 40vw, 100vw"} />
             </figure>
             <div className="journey-step-body">
               <span>{String(index + 1).padStart(2, "0")}</span>
@@ -285,7 +288,7 @@ function Services() {
       <div className="shell service-grid">
         {services.map((service, index) => (
           <article className={`service-card service-${index + 1}`} data-gsap key={service.title}>
-            <div className="service-image gsap-media"><Image src={service.image} alt="" fill sizes="(min-width: 960px) 40vw, 100vw" /></div>
+            <div className="service-image gsap-media"><Image src={assetPath(service.image)} alt="" fill sizes="(min-width: 960px) 40vw, 100vw" /></div>
             <div className="service-body">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
@@ -307,7 +310,7 @@ function Insights() {
       <div className="shell insights-list">
         {insights.map((insight) => (
           <article className="insight" key={insight.title}>
-            <div className="insight-image gsap-media"><Image src={insight.image} alt="" fill sizes="(min-width: 960px) 25vw, 100vw" /></div>
+            <div className="insight-image gsap-media"><Image src={assetPath(insight.image)} alt="" fill sizes="(min-width: 960px) 25vw, 100vw" /></div>
             <div><p className="insight-topic">{insight.topic}</p><h3>{insight.title}</h3><p>{insight.description}</p></div>
           </article>
         ))}
@@ -323,7 +326,7 @@ function Testimonials() {
       <div className="shell testimonial-grid">
         {testimonials.map(([quote, name, role, photo]) => (
           <figure className="testimonial gsap-section-reveal" data-gsap key={name}>
-            <div className="testimonial-photo"><Image src={photo} alt="" fill sizes="120px" /></div>
+            <div className="testimonial-photo"><Image src={assetPath(photo)} alt="" fill sizes="120px" /></div>
             <blockquote>“{quote}”</blockquote>
             <figcaption><strong>{name}</strong><span>{role}</span></figcaption>
           </figure>
