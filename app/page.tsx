@@ -150,14 +150,13 @@ function Hero() {
     <section id="top" className="hero">
       <div className="shell hero-grid">
         <div className="hero-copy gsap-hero-copy" data-gsap>
-          <p className="kicker">People-first workplace transformation</p>
           <h1>
             <span className="hero-tagline-line">Guiding <span className="hero-tagline-accent">People</span>,</span>
             <span className="hero-tagline-line">Growing Businesses</span>
           </h1>
           <p className="hero-lede">
-            <strong>The future of work starts with people.</strong>
-            <span>People-first transformation for growing businesses, combining practical AI, stronger teams and better ways of working.</span>
+            <strong>Better workplaces for every growing business.</strong>
+            <span>Helping businesses grow by empowering people and transforming the way work gets done.</span>
           </p>
           <a className="button button-primary" href="#contact">Talk to Us <Arrow /></a>
         </div>
@@ -222,36 +221,6 @@ function WhyUs() {
               <p>{description}</p>
             </article>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Purpose() {
-  return (
-    <section className="section purpose-section" aria-labelledby="purpose-heading">
-      <div className="shell purpose-grid">
-        <figure className="purpose-image gsap-section-reveal" data-gsap>
-          <Image
-            src={assetPath("/assets/generated/vision-mission-malaysia.webp")}
-            alt="A diverse Malaysian team coordinating work inside a growing local business"
-            fill
-            sizes="(min-width: 801px) 56vw, 100vw"
-          />
-        </figure>
-        <div className="purpose-copy gsap-section-reveal" data-gsap>
-          <p className="kicker" id="purpose-heading">What guides us</p>
-          <dl className="purpose-statements">
-            <div className="purpose-vision">
-              <dt>Vision</dt>
-              <dd>Better workplaces for every growing business.</dd>
-            </div>
-            <div className="purpose-mission">
-              <dt>Mission</dt>
-              <dd>Helping businesses grow by empowering people and transforming the way work gets done.</dd>
-            </div>
-          </dl>
         </div>
       </div>
     </section>
@@ -357,5 +326,5 @@ function Footer() {
 }
 
 export default function Home() {
-  return <div className="page-shell"><MotionController /><Header /><main><Hero /><Shift /><WhyUs /><Purpose /><Journey /><Services /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
+  return <div className="page-shell"><MotionController /><Header /><main><Hero /><Shift /><WhyUs /><Journey /><Services /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
 }
