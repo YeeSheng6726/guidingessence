@@ -231,7 +231,7 @@ function Journey() {
   return (
     <section id="journey" className="section journey-section">
       <div className="shell journey-heading gsap-section-reveal" data-gsap>
-        <h2>Workplace transformation journey</h2>
+        <h2>Our Workplace Transformation Journey</h2>
       </div>
       <ol className="shell journey-list">
         {steps.map(({ title, outcome, icon: Icon }, index) => (
