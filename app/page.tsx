@@ -212,8 +212,8 @@ function WhyUs() {
           <h2>Transformation built for the people doing the work.</h2>
         </div>
         <div className="principle-grid">
-          {principles.map(({ title, description, icon: Icon }, index) => (
-            <article key={title} className={`principle principle-${index + 1}`}>
+          {principles.map(({ title, description, icon: Icon }) => (
+            <article key={title} className="principle">
               <span className="principle-icon" aria-hidden="true">
                 <Icon size={32} strokeWidth={1.65} />
               </span>
@@ -231,8 +231,7 @@ function Journey() {
   return (
     <section id="journey" className="section journey-section">
       <div className="shell journey-heading gsap-section-reveal" data-gsap>
-        <p className="kicker">Workplace transformation journey</p>
-        <h2>Five stages. One practical path forward.</h2>
+        <h2>Workplace transformation journey</h2>
       </div>
       <ol className="shell journey-list">
         {steps.map(({ title, outcome, icon: Icon }, index) => (
