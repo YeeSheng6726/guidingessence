@@ -1,5 +1,17 @@
 import Image from "next/image";
-import { ClipboardCheck, HeartHandshake, RefreshCw, Route, Scale, Unplug } from "lucide-react";
+import {
+  ChartNoAxesColumnIncreasing,
+  ChartPie,
+  ClipboardCheck,
+  HeartHandshake,
+  RefreshCw,
+  Route,
+  Scale,
+  Search,
+  SquarePen,
+  Unplug,
+  UsersRound,
+} from "lucide-react";
 import MotionController from "./motion";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -39,32 +51,27 @@ const steps = [
   {
     title: "Discover",
     outcome: "See where your people and workflows are today.",
-    image: "/assets/generated/journey-discover-malaysia.webp",
-    alt: "Malaysian business leaders sharing their workplace experiences around a meeting table",
+    icon: Search,
   },
   {
     title: "Diagnose",
     outcome: "Find the friction and the opportunities that matter.",
-    image: "/assets/generated/journey-diagnose-malaysia.webp",
-    alt: "A Malaysian operations team examining a process map together",
+    icon: ChartPie,
   },
   {
     title: "Design",
     outcome: "Shape practical workflows around how work gets done.",
-    image: "/assets/generated/journey-design-malaysia.webp",
-    alt: "A diverse Malaysian team co-designing a practical workflow in a workshop",
+    icon: SquarePen,
   },
   {
     title: "Develop",
     outcome: "Build confidence through hands-on learning and practice.",
-    image: "/assets/generated/journey-develop-malaysia.webp",
-    alt: "Malaysian employees learning together during a hands-on laptop session",
+    icon: UsersRound,
   },
   {
     title: "Transform",
     outcome: "Embed better habits so progress keeps moving.",
-    image: "/assets/generated/journey-transform-malaysia.webp",
-    alt: "A confident Malaysian workplace team coordinating their work around a laptop",
+    icon: ChartNoAxesColumnIncreasing,
   },
 ];
 
@@ -259,16 +266,14 @@ function Journey() {
         <h2>Five stages. One practical path forward.</h2>
       </div>
       <ol className="shell journey-list">
-        {steps.map((step, index) => (
-          <li key={step.title} className="journey-step" data-gsap>
-            <figure className="journey-step-media gsap-media">
-              <Image src={assetPath(step.image)} alt={step.alt} fill sizes={index === 0 ? "(min-width: 801px) 60vw, 100vw" : "(min-width: 801px) 40vw, 100vw"} />
-            </figure>
+        {steps.map(({ title, outcome, icon: Icon }, index) => (
+          <li key={title} className="journey-step" data-gsap>
+            <span className="journey-marker" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             <div className="journey-step-body">
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span className="journey-icon" aria-hidden="true"><Icon size={46} strokeWidth={1.7} /></span>
               <div className="journey-step-copy">
-                <h3>{step.title}</h3>
-                <p>{step.outcome}</p>
+                <h3>{title}</h3>
+                <p>{outcome}</p>
               </div>
             </div>
           </li>
