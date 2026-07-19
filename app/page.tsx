@@ -28,7 +28,7 @@ const services = [
   {
     title: "AI Learning",
     description: "Build AI confidence across your organisation.",
-    image: "/assets/generated/ai-learning-malaysia.webp",
+    image: "/assets/generated/journey-develop-malaysia.webp",
   },
   {
     title: "AI Workplace Transformation",
