@@ -13,6 +13,7 @@ a { color: inherit; text-decoration: none; }
 .brand { display: flex; align-items: center; gap: .45rem; font: 650 1rem/1 var(--font-geist-sans), Arial; letter-spacing: -.04em; white-space: nowrap; }
 .brand img { width: 59px; height: 59px; border-radius: 50%; object-fit: cover; }
 nav { display: flex; align-items: center; gap: 2rem; color: var(--muted); font-size: .88rem; }
+nav a { font-weight: 700; }
 nav a, .nav-contact, .text-link { transition: color .2s ease, transform .2s ease; }
 nav a:hover, .text-link:hover { color: var(--accent); }
 .nav-contact { border-bottom: 1px solid var(--ink); padding-bottom: .18rem; font-size: .88rem; font-weight: 600; }
