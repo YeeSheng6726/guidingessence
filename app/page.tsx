@@ -321,7 +321,7 @@ function Closing() {
 }
 
 function Footer() {
-  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People, Growing Businesses</p></div><div className="footer-links"><a href="#why-us">About</a><a href="#services">Services</a><a href="#insights">Workplace Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
+  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People, Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#journey">Journey</a><a href="#services">Services</a><a href="#insights">Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
 }
 
 export default function Home() {
