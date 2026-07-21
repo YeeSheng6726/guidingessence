@@ -256,9 +256,7 @@ function Services() {
   return (
     <section id="services" className="section services-section">
       <div className="shell services-intro gsap-section-reveal" data-gsap>
-        <p className="kicker">How we help</p>
-        <h2>We help you learn, transform and grow.</h2>
-        <p>Whether you&apos;re just getting started with AI or ready to transform your workplace, we provide end-to-end support to help your business move forward with confidence.</p>
+        <h2>How we help</h2>
       </div>
       <div className="shell help-grid">
         {helpPillars.map(({ number, title, statement, description, features, image, alt, tone, icon: Icon }) => (
