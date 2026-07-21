@@ -149,7 +149,7 @@ function Hero() {
       <div className="shell hero-grid">
         <div className="hero-copy gsap-hero-copy" data-gsap>
           <h1>
-            <span className="hero-tagline-line">Guiding <span className="hero-tagline-people">People</span>,</span>
+            <span className="hero-tagline-line">Guiding <span className="hero-tagline-people">People</span></span>
             <span className="hero-tagline-line">Growing <span className="hero-tagline-businesses">Businesses</span></span>
           </h1>
           <p className="hero-lede">
@@ -195,8 +195,7 @@ function WhyUs() {
     <section id="why-us" className="section approach-section">
       <div className="shell why-grid">
         <div className="why-heading gsap-section-reveal" data-gsap>
-          <p className="kicker">Why Guiding Essence</p>
-          <h2>Transformation built for the people doing the work.</h2>
+          <h2>Why Guiding Essence</h2>
         </div>
         <div className="principle-grid">
           {principles.map(({ title, description, icon: Icon }) => (
@@ -308,7 +307,7 @@ function Closing() {
 }
 
 function Footer() {
-  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People, Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#journey">Journey</a><a href="#services">Services</a><a href="#insights">Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
+  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#journey">Journey</a><a href="#services">Services</a><a href="#insights">Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
 }
 
 export default function Home() {
