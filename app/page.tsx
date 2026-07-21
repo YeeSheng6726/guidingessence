@@ -3,12 +3,14 @@ import {
   ChartNoAxesColumnIncreasing,
   ChartPie,
   ClipboardCheck,
+  GraduationCap,
   HeartHandshake,
   RefreshCw,
   Scale,
   Search,
   SquarePen,
   UsersRound,
+  Workflow,
 } from "lucide-react";
 import MotionController from "./motion";
 
@@ -17,31 +19,44 @@ const assetPath = (path: string) => `${basePath}${path}`;
 
 const navItems = [
   { label: "Why us", href: "#why-us" },
-  { label: "Journey", href: "#journey" },
   { label: "Services", href: "#services" },
+  { label: "Journey", href: "#journey" },
   { label: "Insights", href: "#insights" },
 ];
 
-const services = [
+const helpPillars = [
   {
-    title: "AI Learning",
-    description: "Build AI confidence across your organisation.",
-    image: "/assets/generated/journey-develop-malaysia.webp",
+    number: "1",
+    title: "Learn",
+    statement: "Build AI capability across your organisation.",
+    description: "Practical, hands-on learning that helps your team gain the skills and confidence to work smarter with AI.",
+    features: ["AI Learning Programmes", "Workshops & Masterclasses", "HRDC Claimable Courses", "Team Upskilling"],
+    image: "/assets/generated/ai-learning-malaysia.webp",
+    alt: "A Malaysian facilitator leading a practical workplace learning session",
+    tone: "purple",
+    icon: GraduationCap,
   },
   {
-    title: "AI Workplace Transformation",
-    description: "Workflow, automation and change management designed around your people.",
+    number: "2",
+    title: "Transform",
+    statement: "Redesign the way work gets done.",
+    description: "We help you improve processes, implement practical AI, and drive meaningful change across your organisation.",
+    features: ["Process & Workflow Redesign", "AI Implementation & Automation", "HR Advisory & Strategy", "Change Management", "Organisation Development"],
     image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
+    alt: "A Malaysian team redesigning a workflow together",
+    tone: "blue",
+    icon: Workflow,
   },
   {
-    title: "Recruitment",
-    description: "Find people who fit your culture and contribute to where you are going.",
+    number: "3",
+    title: "Grow",
+    statement: "Build stronger teams for the future.",
+    description: "We help you attract, assess and place the right people so your business can grow sustainably.",
+    features: ["Talent Sourcing & Recruitment", "Permanent & Contract Hiring", "Workforce Planning", "Talent Strategy"],
     image: "/assets/generated/recruitment-malaysia.webp",
-  },
-  {
-    title: "HR Advisory",
-    description: "Modern HR systems for growing businesses.",
-    image: "/assets/generated/hr-advisory-malaysia.webp",
+    alt: "A recruitment adviser speaking with a candidate in a bright office",
+    tone: "teal",
+    icon: UsersRound,
   },
 ];
 
@@ -240,17 +255,30 @@ function Journey() {
 function Services() {
   return (
     <section id="services" className="section services-section">
-      <div className="shell section-heading gsap-section-reveal" data-gsap>
-        <p className="kicker">How we can help</p>
-        <h2>Practical support for an AI-ready workplace.</h2>
+      <div className="shell services-intro gsap-section-reveal" data-gsap>
+        <p className="kicker">How we help</p>
+        <h2>We help you learn, transform and grow.</h2>
+        <p>Whether you&apos;re just getting started with AI or ready to transform your workplace, we provide end-to-end support to help your business move forward with confidence.</p>
       </div>
-      <div className="shell service-grid">
-        {services.map((service, index) => (
-          <article className={`service-card service-${index + 1}`} data-gsap key={service.title}>
-            <div className="service-image gsap-media"><Image src={assetPath(service.image)} alt="" fill sizes="(min-width: 960px) 40vw, 100vw" /></div>
-            <div className="service-body">
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+      <div className="shell help-grid">
+        {helpPillars.map(({ number, title, statement, description, features, image, alt, tone, icon: Icon }) => (
+          <article className={`help-card help-card-${tone}`} data-gsap key={title}>
+            <div className="help-card-media gsap-media">
+              <Image src={assetPath(image)} alt={alt} fill sizes="(min-width: 1181px) 30vw, (min-width: 801px) 70vw, 100vw" />
+            </div>
+            <div className="help-card-content">
+              <div className="help-card-title-row">
+                <span className="help-card-icon" aria-hidden="true"><Icon size={30} strokeWidth={1.7} /></span>
+                <h3><span>{number}.</span> {title}</h3>
+              </div>
+              <div className="help-card-summary">
+                <p className="help-card-statement">{statement}</p>
+                <p className="help-card-description">{description}</p>
+              </div>
+              <ul className="help-card-features">
+                {features.map((feature) => <li key={feature}>{feature}</li>)}
+              </ul>
+              <a className="help-card-link" href="#contact">Learn more <Arrow /></a>
             </div>
           </article>
         ))}
@@ -307,9 +335,9 @@ function Closing() {
 }
 
 function Footer() {
-  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#journey">Journey</a><a href="#services">Services</a><a href="#insights">Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
+  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#services">Services</a><a href="#journey">Journey</a><a href="#insights">Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
 }
 
 export default function Home() {
-  return <div className="page-shell"><MotionController /><Header /><main><Hero /><Shift /><WhyUs /><Journey /><Services /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
+  return <div className="page-shell"><MotionController /><Header /><main><Hero /><Shift /><WhyUs /><Services /><Journey /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
 }
