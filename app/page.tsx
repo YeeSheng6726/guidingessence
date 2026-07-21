@@ -151,8 +151,8 @@ function Hero() {
       <div className="shell hero-grid">
         <div className="hero-copy gsap-hero-copy" data-gsap>
           <h1>
-            <span className="hero-tagline-line">Guiding <span className="hero-tagline-accent">People</span>,</span>
-            <span className="hero-tagline-line">Growing Businesses</span>
+            <span className="hero-tagline-line">Guiding <span className="hero-tagline-people">People</span>,</span>
+            <span className="hero-tagline-line">Growing <span className="hero-tagline-businesses">Businesses</span></span>
           </h1>
           <p className="hero-lede">
             <strong>Better workplaces for every growing business.</strong>
