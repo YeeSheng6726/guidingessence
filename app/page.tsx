@@ -5,11 +5,9 @@ import {
   ClipboardCheck,
   HeartHandshake,
   RefreshCw,
-  Route,
   Scale,
   Search,
   SquarePen,
-  Unplug,
   UsersRound,
 } from "lucide-react";
 import MotionController from "./motion";
@@ -174,30 +172,19 @@ function Hero() {
 function Shift() {
   return (
     <section className="section shift-section">
-      <div className="shell shift-heading gsap-section-reveal" data-gsap>
-        <p className="kicker">The workplace is changing</p>
-        <h2>Change can create friction or move people forward.</h2>
-        <p>New tools only work when people have a clear path through them.</p>
-      </div>
-      <div className="shell change-grid" aria-label="A visual comparison of workplace approaches">
-        <article className="change-card change-card-fragmented">
-          <figure className="change-image gsap-media">
-            <Image src={assetPath("/assets/generated/workplace-fragmented-malaysia.webp")} alt="A Malaysian team managing fragmented information across several devices" fill sizes="(min-width: 801px) 50vw, 100vw" />
-          </figure>
-          <div className="change-caption">
-            <span className="change-icon" aria-hidden="true"><Unplug size={22} strokeWidth={1.75} /></span>
-            <div><p>Without a clear path</p><h3>Tools multiply. Work fragments.</h3></div>
+      <div className="shell shift-grid">
+        <div className="shift-copy gsap-section-reveal" data-gsap>
+          <h2>The Workplace Is Changing.</h2>
+          <div className="shift-body">
+            <p>AI is transforming how work gets done, but technology alone doesn&apos;t create better businesses.</p>
+            <p>Growing businesses need people who can adapt, leaders who can guide change, and practical systems that turn new ideas into everyday ways of working.</p>
+            <p>At Guiding Essence, we help businesses learn, transform, and grow through practical AI Workforce Transformation, AI Learning and Recruitment.</p>
+            <p className="shift-tagline">Guiding People. Growing Businesses.</p>
           </div>
-        </article>
-        <article className="change-card change-card-aligned">
-          <figure className="change-image gsap-media">
-            <Image src={assetPath("/assets/generated/workplace-aligned-malaysia.webp")} alt="A Malaysian team collaborating confidently around one shared workflow" fill sizes="(min-width: 801px) 50vw, 100vw" />
-          </figure>
-          <div className="change-caption">
-            <span className="change-icon" aria-hidden="true"><Route size={22} strokeWidth={1.75} /></span>
-            <div><p>With Guiding Essence</p><h3>One direction. People move together.</h3></div>
-          </div>
-        </article>
+        </div>
+        <figure className="shift-media gsap-media">
+          <Image src={assetPath("/assets/generated/workplace-aligned-malaysia.webp")} alt="A Malaysian workplace team collaborating around a shared laptop" fill sizes="(min-width: 801px) 60vw, 100vw" />
+        </figure>
       </div>
     </section>
   );
