@@ -67,7 +67,7 @@ const featuredProgrammes = [
     outcomes: ["Smart sourcing", "Resume screening", "Interview support", "Candidate experience"],
     image: "/assets/generated/recruitment-malaysia.webp",
     alt: "A recruitment adviser speaking with a candidate",
-    tone: "mint",
+    tone: "cyan",
   },
   {
     prefix: "AI for HR:",
@@ -87,7 +87,7 @@ const featuredProgrammes = [
     outcomes: ["Workforce planning", "People analytics", "Performance insights", "Strategic decision support"],
     image: "/assets/generated/vision-mission-malaysia.webp",
     alt: "A Malaysian leadership team discussing workplace strategy",
-    tone: "blue",
+    tone: "jade",
   },
   {
     prefix: "Advanced Certificate in",
@@ -97,7 +97,7 @@ const featuredProgrammes = [
     outcomes: ["Covers all key HR areas", "Practical tools & frameworks", "Real-world applications", "Certificate of completion"],
     image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
     alt: "A Malaysian team applying practical workplace transformation tools",
-    tone: "cyan",
+    tone: "blue",
   },
 ];
 
