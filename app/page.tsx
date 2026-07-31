@@ -11,7 +11,6 @@ import {
   UsersRound,
   Zap,
 } from "lucide-react";
-import MotionController from "./motion";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
@@ -138,7 +137,7 @@ function Header() {
     <header className="site-header">
       <div className="shell nav-wrap">
         <a className="brand" href="#top" aria-label="Guiding Essence home">
-          <Image src={assetPath("/logo.png")} alt="Guiding Essence" width={92} height={92} priority />
+          <Image src={assetPath("/logo.webp")} alt="Guiding Essence" width={92} height={92} priority />
           <span>Guiding Essence</span>
         </a>
         <nav aria-label="Main navigation">
@@ -154,7 +153,7 @@ function Hero() {
   return (
     <section id="top" className="hero">
       <div className="shell hero-grid">
-        <div className="hero-copy gsap-hero-copy" data-gsap>
+        <div className="hero-copy reveal-hero">
           <h1>
             <span className="hero-tagline-line">Guiding <span className="hero-tagline-people">People</span></span>
             <span className="hero-tagline-line">Growing <span className="hero-tagline-businesses">Businesses</span></span>
@@ -165,7 +164,7 @@ function Hero() {
           </p>
           <a className="button button-primary" href="#services">Explore Programmes <Arrow /></a>
         </div>
-        <div className="hero-media-frame gsap-hero-media" data-gsap>
+        <div className="hero-media-frame reveal-hero-media">
           <figure className="hero-media">
             <Image src={assetPath("/assets/hero/in-person-training-malaysia-v4.webp")} alt="A Chinese Malaysian trainer presenting to participants seated in front of a Guiding Essence slide" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
           </figure>
@@ -203,7 +202,7 @@ function TrainingCredentials() {
 function FeaturedProgrammes() {
   return (
     <section className="featured-programmes">
-      <div id="services" className="shell programmes-heading gsap-section-reveal" data-gsap>
+      <div id="services" className="shell programmes-heading reveal-on-scroll">
         <div className="programmes-heading-copy">
           <p className="programmes-kicker">Featured programmes</p>
           <h2>Practical programmes. Real impact.</h2>
@@ -243,7 +242,7 @@ function FeaturedProgrammes() {
 function WhyGuidingEssence() {
   return (
     <section className="why-guiding">
-      <div id="why-us" className="shell why-guiding-heading gsap-section-reveal" data-gsap>
+      <div id="why-us" className="shell why-guiding-heading reveal-on-scroll">
         <p className="programmes-kicker">Why Guiding Essence</p>
         <h2>People-first transformation that delivers results.</h2>
       </div>
@@ -263,7 +262,7 @@ function WhyGuidingEssence() {
 function ProgrammeCallToAction() {
   return (
     <section id="contact" className="programme-cta-section">
-      <div className="shell programme-cta gsap-section-reveal" data-gsap>
+      <div className="shell programme-cta reveal-on-scroll">
         <div className="programme-cta-copy">
           <h2>Ready to build<br />a better workplace?</h2>
           <p>Let&apos;s find the right programme or solution for your business.</p>
@@ -284,5 +283,5 @@ function Footer() {
 }
 
 export default function Home() {
-  return <div className="page-shell"><MotionController /><Header /><main><Hero /><TrainingCredentials /><FeaturedProgrammes /><WhyGuidingEssence /><ProgrammeCallToAction /></main><Footer /></div>;
+  return <div className="page-shell"><Header /><main><Hero /><TrainingCredentials /><FeaturedProgrammes /><WhyGuidingEssence /><ProgrammeCallToAction /></main><Footer /></div>;
 }
