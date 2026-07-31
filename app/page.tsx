@@ -1,116 +1,131 @@
 import Image from "next/image";
-import { ClipboardCheck, HeartHandshake, RefreshCw, Route, Scale, Unplug } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Building2,
+  HeartHandshake,
+  MessageCircle,
+  Presentation,
+  Star,
+  UsersRound,
+  Zap,
+} from "lucide-react";
 import MotionController from "./motion";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${basePath}${path}`;
 
 const navItems = [
   { label: "Why us", href: "#why-us" },
-  { label: "Journey", href: "#journey" },
   { label: "Services", href: "#services" },
-  { label: "Insights", href: "#insights" },
 ];
 
-const services = [
+const trainingCredentials: Array<{
+  lines: string[];
+  tone: string;
+  icon?: LucideIcon;
+  logo?: string;
+}> = [
   {
-    title: "AI Learning",
-    description: "Build AI confidence across your organisation.",
+    lines: ["HRD Corp", "Claimable Courses"],
+    icon: BadgeCheck,
+    tone: "teal",
+  },
+  {
+    lines: ["Public &", "In-house Training"],
+    icon: Presentation,
+    tone: "purple",
+  },
+  {
+    lines: ["Team Building"],
+    icon: UsersRound,
+    tone: "teal",
+  },
+  {
+    lines: ["Registered HRD Corp", "Training Provider"],
+    logo: "/assets/hrd-corp-registered-training-provider.webp",
+    tone: "hrd",
+  },
+];
+
+const featuredProgrammes = [
+  {
+    prefix: "AI for HR:",
+    title: "Work Smarter",
+    subtitle: "Everyday Productivity",
+    description: "Boost everyday productivity with practical AI tools for HR operations, communication, documentation, and workflow automation.",
+    outcomes: ["Automate repetitive tasks", "Create content faster", "Organize information", "Improve accuracy"],
     image: "/assets/generated/ai-learning-malaysia.webp",
+    alt: "A facilitator leading a practical workplace learning session",
+    tone: "purple",
   },
   {
-    title: "AI Workplace Transformation",
-    description: "Workflow, automation and change management designed around your people.",
-    image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
-  },
-  {
-    title: "Recruitment",
-    description: "Find people who fit your culture and contribute to where you are going.",
+    prefix: "AI for HR:",
+    title: "Hire Smarter",
+    subtitle: "Talent Acquisition",
+    description: "Transform your recruitment process using AI for sourcing, screening, interviewing, and candidate engagement.",
+    outcomes: ["Smart sourcing", "Resume screening", "Interview support", "Candidate experience"],
     image: "/assets/generated/recruitment-malaysia.webp",
+    alt: "A recruitment adviser speaking with a candidate",
+    tone: "teal",
   },
   {
-    title: "HR Advisory",
-    description: "Modern HR systems for growing businesses.",
+    prefix: "AI for HR:",
+    title: "Reward Smarter",
+    subtitle: "Compensation & Benefits",
+    description: "Leverage AI to streamline compensation, benefits, job evaluation, salary benchmarking, and total rewards planning.",
+    outcomes: ["Compensation analysis", "Market benchmarking", "Benefits optimization", "Total rewards insights"],
     image: "/assets/generated/hr-advisory-malaysia.webp",
+    alt: "An HR adviser discussing workplace planning with a professional",
+    tone: "orange",
+  },
+  {
+    prefix: "AI for HR:",
+    title: "Lead Smarter",
+    subtitle: "Strategic HR",
+    description: "Use AI to support strategic HR, workforce planning, performance management, and data-driven decision making.",
+    outcomes: ["Workforce planning", "People analytics", "Performance insights", "Strategic decision support"],
+    image: "/assets/generated/vision-mission-malaysia.webp",
+    alt: "A Malaysian leadership team discussing workplace strategy",
+    tone: "blue",
+  },
+  {
+    prefix: "Advanced Certificate in",
+    title: "AI for Human Capital Management",
+    subtitle: null,
+    description: "A comprehensive programme covering AI across the HR function — from operational excellence to strategic workforce transformation.",
+    outcomes: ["Covers all key HR areas", "Practical tools & frameworks", "Real-world applications", "Certificate of completion"],
+    image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
+    alt: "A Malaysian team applying practical workplace transformation tools",
+    tone: "violet",
   },
 ];
 
-const steps = [
+const reasons = [
   {
-    title: "Discover",
-    outcome: "See where your people and workflows are today.",
-    image: "/assets/generated/journey-discover-malaysia.webp",
-    alt: "Malaysian business leaders sharing their workplace experiences around a meeting table",
-  },
-  {
-    title: "Diagnose",
-    outcome: "Find the friction and the opportunities that matter.",
-    image: "/assets/generated/journey-diagnose-malaysia.webp",
-    alt: "A Malaysian operations team examining a process map together",
-  },
-  {
-    title: "Design",
-    outcome: "Shape practical workflows around how work gets done.",
-    image: "/assets/generated/journey-design-malaysia.webp",
-    alt: "A diverse Malaysian team co-designing a practical workflow in a workshop",
-  },
-  {
-    title: "Develop",
-    outcome: "Build confidence through hands-on learning and practice.",
-    image: "/assets/generated/journey-develop-malaysia.webp",
-    alt: "Malaysian employees learning together during a hands-on laptop session",
-  },
-  {
-    title: "Transform",
-    outcome: "Embed better habits so progress keeps moving.",
-    image: "/assets/generated/journey-transform-malaysia.webp",
-    alt: "A confident Malaysian workplace team coordinating their work around a laptop",
-  },
-];
-
-const principles = [
-  {
-    title: "Human first",
-    description: "Technology should strengthen people.",
+    title: "People First",
+    description: "We believe transformation starts with people.",
     icon: HeartHandshake,
+    tone: "purple",
   },
   {
-    title: "Practical, not theoretical",
-    description: "Useful change starts with real work.",
-    icon: ClipboardCheck,
+    title: "Practical & Actionable",
+    description: "Real tools, real strategies that create real impact.",
+    icon: Zap,
+    tone: "blue",
   },
   {
-    title: "People and business focused",
-    description: "Progress should serve both.",
-    icon: Scale,
+    title: "Built for SMEs",
+    description: "Solutions that are scalable, affordable and results-driven.",
+    icon: Building2,
+    tone: "teal",
   },
   {
-    title: "Transformation over training",
-    description: "Habits change, not just knowledge.",
-    icon: RefreshCw,
-  },
-];
-
-const testimonials = [
-  ["Guiding Essence helped our leadership team turn uncertainty into a clear direction our people could trust.", "Mina Tan", "COO, Meridian Health", "/assets/hero/guiding-conversation.png"],
-  ["The journey was grounded, ambitious and deeply human. Our team is more confident now.", "Ravi Patel", "Head of People, Hikari Retail", "/assets/generated/testimonial-ravi-malaysia.webp"],
-];
-
-const insights = [
-  {
-    title: "Practical design is an AI advantage",
-    description: "Thoughtful implementation is what turns possibility into useful work.",
-    image: "/assets/generated/insight-ai-malaysia.webp",
-    topic: "AI and strategy",
-  },
-  {
-    title: "Leading through changing expectations",
-    description: "Workplace transformation works when outcomes and experience move together.",
-    image: "/assets/generated/insight-leadership-malaysia.webp",
-    topic: "Leadership",
-  },
-  {
-    title: "Beyond one-off training",
-    description: "How teams build learning into the way work actually gets done.",
-    image: "/assets/generated/insight-productivity-malaysia.webp",
-    topic: "Capability",
+    title: "Real Experience",
+    description: "Consultants with deep HR and business experience.",
+    icon: Star,
+    tone: "teal",
   },
 ];
 
@@ -123,7 +138,7 @@ function Header() {
     <header className="site-header">
       <div className="shell nav-wrap">
         <a className="brand" href="#top" aria-label="Guiding Essence home">
-          <Image src="/logo.png" alt="Guiding Essence" width={92} height={92} priority />
+          <Image src={assetPath("/logo.png")} alt="Guiding Essence" width={92} height={92} priority />
           <span>Guiding Essence</span>
         </a>
         <nav aria-label="Main navigation">
@@ -140,214 +155,134 @@ function Hero() {
     <section id="top" className="hero">
       <div className="shell hero-grid">
         <div className="hero-copy gsap-hero-copy" data-gsap>
-          <p className="kicker">People-first workplace transformation</p>
           <h1>
-            <span className="hero-tagline-line">Guiding <span className="hero-tagline-accent">People</span>,</span>
-            <span className="hero-tagline-line">Growing Businesses</span>
+            <span className="hero-tagline-line">Guiding <span className="hero-tagline-people">People</span></span>
+            <span className="hero-tagline-line">Growing <span className="hero-tagline-businesses">Businesses</span></span>
           </h1>
           <p className="hero-lede">
-            <strong>The future of work starts with people.</strong>
-            <span>People-first transformation for growing businesses, combining practical AI, stronger teams and better ways of working.</span>
+            <strong>Better workplaces for every growing business.</strong>
+            <span>Helping businesses grow by empowering people and transforming the way work gets done.</span>
           </p>
-          <a className="button button-primary" href="#contact">Talk to Us <Arrow /></a>
+          <a className="button button-primary" href="#services">Explore Programmes <Arrow /></a>
         </div>
-        <figure className="hero-media gsap-hero-media" data-gsap>
-          <Image src="/assets/hero/guiding-team.png" alt="A small leadership team working together around a table" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
-        </figure>
-      </div>
-      <div className="shell confidence-line">
-        <p>Practical AI. Stronger teams. Better workplaces.</p>
+        <div className="hero-media-frame gsap-hero-media" data-gsap>
+          <figure className="hero-media">
+            <Image src={assetPath("/assets/hero/in-person-training-malaysia-v4.webp")} alt="A Chinese Malaysian trainer presenting to participants seated in front of a Guiding Essence slide" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
+          </figure>
+        </div>
       </div>
     </section>
   );
 }
 
-function Shift() {
+function TrainingCredentials() {
   return (
-    <section className="section shift-section">
-      <div className="shell shift-heading gsap-section-reveal" data-gsap>
-        <p className="kicker">The workplace is changing</p>
-        <h2>Change can create friction or move people forward.</h2>
-        <p>New tools only work when people have a clear path through them.</p>
-      </div>
-      <div className="shell change-grid" aria-label="A visual comparison of workplace approaches">
-        <article className="change-card change-card-fragmented">
-          <figure className="change-image gsap-media">
-            <Image src="/assets/generated/workplace-fragmented-malaysia.webp" alt="A Malaysian team managing fragmented information across several devices" fill sizes="(min-width: 801px) 50vw, 100vw" />
-          </figure>
-          <div className="change-caption">
-            <span className="change-icon" aria-hidden="true"><Unplug size={22} strokeWidth={1.75} /></span>
-            <div><p>Without a clear path</p><h3>Tools multiply. Work fragments.</h3></div>
-          </div>
-        </article>
-        <article className="change-card change-card-aligned">
-          <figure className="change-image gsap-media">
-            <Image src="/assets/generated/workplace-aligned-malaysia.webp" alt="A Malaysian team collaborating confidently around one shared workflow" fill sizes="(min-width: 801px) 50vw, 100vw" />
-          </figure>
-          <div className="change-caption">
-            <span className="change-icon" aria-hidden="true"><Route size={22} strokeWidth={1.75} /></span>
-            <div><p>With Guiding Essence</p><h3>One direction. People move together.</h3></div>
-          </div>
-        </article>
-      </div>
-    </section>
-  );
-}
-
-function WhyUs() {
-  return (
-    <section id="why-us" className="section approach-section">
-      <div className="shell why-grid">
-        <div className="why-heading gsap-section-reveal" data-gsap>
-          <p className="kicker">Why Guiding Essence</p>
-          <h2>Transformation built for the people doing the work.</h2>
-        </div>
-        <div className="principle-grid">
-          {principles.map(({ title, description, icon: Icon }, index) => (
-            <article key={title} className={`principle principle-${index + 1}`}>
-              <span className="principle-icon" aria-hidden="true">
-                <Icon size={32} strokeWidth={1.65} />
+    <section className="training-credentials" aria-label="Training credentials">
+      <div className="shell credential-grid">
+        {trainingCredentials.map(({ lines, icon: Icon, logo, tone }) => (
+          <div className={`credential-item credential-item-${tone}`} key={lines.join(" ")}>
+            {logo ? (
+              <span className="credential-logo-wrap">
+                <Image className="credential-logo" src={assetPath(logo)} alt="HRD Corp Registered Training Provider" width={64} height={64} />
               </span>
-              <h3>{title}</h3>
-              <p>{description}</p>
+            ) : Icon ? (
+              <span className="credential-icon" aria-hidden="true">
+                <Icon size={34} strokeWidth={1.8} />
+              </span>
+            ) : null}
+            <p>
+              {lines.map((line) => <span key={line}>{line}</span>)}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FeaturedProgrammes() {
+  return (
+    <section className="featured-programmes">
+      <div id="services" className="shell programmes-heading gsap-section-reveal" data-gsap>
+        <div className="programmes-heading-copy">
+          <p className="programmes-kicker">Featured programmes</p>
+          <h2>Practical programmes. Real impact.</h2>
+          <p className="programmes-subtitle">
+            <span>Choose the programme that best matches your role, priorities, or business needs.</span>
+            <span>Each programme is designed as a standalone learning experience.</span>
+          </p>
+        </div>
+      </div>
+
+      <div className="programmes-carousel shell">
+        <a className="carousel-control carousel-control-left" href="#programme-1" aria-label="View previous programmes">‹</a>
+        <div className="programme-grid">
+          {featuredProgrammes.map((programme, index) => (
+            <article className={`programme-card programme-card-${programme.tone}`} id={`programme-${index + 1}`} key={programme.title}>
+              <div className="programme-image">
+                <Image src={assetPath(programme.image)} alt={programme.alt} fill sizes="(min-width: 1280px) 280px, (min-width: 801px) 20vw, 82vw" />
+              </div>
+              <div className="programme-content">
+                <h3><span>{programme.prefix}</span><strong>{programme.title}</strong></h3>
+                <p className="programme-subtitle" aria-hidden={programme.subtitle ? undefined : true}>{programme.subtitle ?? "\u00a0"}</p>
+                <p className="programme-description">{programme.description}</p>
+                <ul className="programme-outcomes">
+                  {programme.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}
+                </ul>
+                <a className="programme-link" href="#contact">Learn more <ArrowRight size={18} strokeWidth={2.2} /></a>
+              </div>
             </article>
           ))}
         </div>
+        <a className="carousel-control carousel-control-right" href="#programme-5" aria-label="View more programmes">›</a>
       </div>
     </section>
   );
 }
 
-function Purpose() {
+function WhyGuidingEssence() {
   return (
-    <section className="section purpose-section" aria-labelledby="purpose-heading">
-      <div className="shell purpose-grid">
-        <figure className="purpose-image gsap-section-reveal" data-gsap>
-          <Image
-            src="/assets/generated/vision-mission-malaysia.webp"
-            alt="A diverse Malaysian team coordinating work inside a growing local business"
-            fill
-            sizes="(min-width: 801px) 56vw, 100vw"
-          />
-        </figure>
-        <div className="purpose-copy gsap-section-reveal" data-gsap>
-          <p className="kicker" id="purpose-heading">What guides us</p>
-          <dl className="purpose-statements">
-            <div className="purpose-vision">
-              <dt>Vision</dt>
-              <dd>Better workplaces for every growing business.</dd>
-            </div>
-            <div className="purpose-mission">
-              <dt>Mission</dt>
-              <dd>Helping businesses grow by empowering people and transforming the way work gets done.</dd>
-            </div>
-          </dl>
+    <section className="why-guiding">
+      <div id="why-us" className="shell why-guiding-heading gsap-section-reveal" data-gsap>
+        <p className="programmes-kicker">Why Guiding Essence</p>
+        <h2>People-first transformation that delivers results.</h2>
+      </div>
+      <div className="shell reason-grid">
+        {reasons.map(({ title, description, icon: Icon, tone }) => (
+          <article className={`reason reason-${tone}`} key={title}>
+            <span className="reason-icon" aria-hidden="true"><Icon size={31} strokeWidth={1.9} /></span>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProgrammeCallToAction() {
+  return (
+    <section id="contact" className="programme-cta-section">
+      <div className="shell programme-cta gsap-section-reveal" data-gsap>
+        <div className="programme-cta-copy">
+          <h2>Ready to build<br />a better workplace?</h2>
+          <p>Let&apos;s find the right programme or solution for your business.</p>
+          <a className="whatsapp-button" href="https://wa.me/" target="_blank" rel="noreferrer">
+            <MessageCircle size={22} strokeWidth={2} aria-hidden="true" /> WhatsApp Us
+          </a>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Journey() {
-  return (
-    <section id="journey" className="section journey-section">
-      <div className="shell journey-heading gsap-section-reveal" data-gsap>
-        <p className="kicker">Workplace transformation journey</p>
-        <h2>Five stages. One practical path forward.</h2>
-      </div>
-      <ol className="shell journey-list">
-        {steps.map((step, index) => (
-          <li key={step.title} className="journey-step" data-gsap>
-            <figure className="journey-step-media gsap-media">
-              <Image src={step.image} alt={step.alt} fill sizes={index === 0 ? "(min-width: 801px) 60vw, 100vw" : "(min-width: 801px) 40vw, 100vw"} />
-            </figure>
-            <div className="journey-step-body">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div className="journey-step-copy">
-                <h3>{step.title}</h3>
-                <p>{step.outcome}</p>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
-function Services() {
-  return (
-    <section id="services" className="section services-section">
-      <div className="shell section-heading gsap-section-reveal" data-gsap>
-        <p className="kicker">How we can help</p>
-        <h2>Practical support for an AI-ready workplace.</h2>
-      </div>
-      <div className="shell service-grid">
-        {services.map((service, index) => (
-          <article className={`service-card service-${index + 1}`} data-gsap key={service.title}>
-            <div className="service-image gsap-media"><Image src={service.image} alt="" fill sizes="(min-width: 960px) 40vw, 100vw" /></div>
-            <div className="service-body">
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Insights() {
-  return (
-    <section id="insights" className="section insights-section">
-      <div className="shell insights-top gsap-section-reveal" data-gsap>
-        <p className="kicker">Workplace insights</p>
-        <h2>Fresh thinking for modern workplace leaders.</h2>
-      </div>
-      <div className="shell insights-list">
-        {insights.map((insight) => (
-          <article className="insight" key={insight.title}>
-            <div className="insight-image gsap-media"><Image src={insight.image} alt="" fill sizes="(min-width: 960px) 25vw, 100vw" /></div>
-            <div><p className="insight-topic">{insight.topic}</p><h3>{insight.title}</h3><p>{insight.description}</p></div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Testimonials() {
-  return (
-    <section className="section testimonials-section">
-      <div className="shell section-heading gsap-section-reveal" data-gsap><p className="kicker">What our clients say</p><h2>Trusted guidance for important change.</h2></div>
-      <div className="shell testimonial-grid">
-        {testimonials.map(([quote, name, role, photo]) => (
-          <figure className="testimonial gsap-section-reveal" data-gsap key={name}>
-            <div className="testimonial-photo"><Image src={photo} alt="" fill sizes="120px" /></div>
-            <blockquote>“{quote}”</blockquote>
-            <figcaption><strong>{name}</strong><span>{role}</span></figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Closing() {
-  return (
-    <section id="contact" className="closing">
-      <div className="shell closing-grid gsap-section-reveal" data-gsap>
-        <div><p className="kicker">Ready to begin?</p><h2>Build a stronger workplace for your people and your business.</h2></div>
-        <div className="closing-action"><p>Let&apos;s start with a conversation about your business, your people and your next stage of growth.</p><a className="button button-light" href="mailto:hello@guidingessence.com">Book a Discovery Call <Arrow /></a></div>
+        <div className="programme-cta-image">
+          <Image src={assetPath("/assets/hero/guiding-team.png")} alt="A Malaysian workplace team discussing ideas around a laptop" fill sizes="(min-width: 801px) 58vw, 100vw" />
+        </div>
       </div>
     </section>
   );
 }
 
 function Footer() {
-  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People, Growing Businesses</p></div><div className="footer-links"><a href="#why-us">About</a><a href="#services">Services</a><a href="#insights">Workplace Insights</a><a href="mailto:hello@guidingessence.com">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
+  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#services">Services</a><a href="#contact">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
 }
 
 export default function Home() {
-  return <div className="page-shell"><MotionController /><Header /><main><Hero /><Shift /><WhyUs /><Purpose /><Journey /><Services /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
+  return <div className="page-shell"><MotionController /><Header /><main><Hero /><TrainingCredentials /><FeaturedProgrammes /><WhyGuidingEssence /><ProgrammeCallToAction /></main><Footer /></div>;
 }

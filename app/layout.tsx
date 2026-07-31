@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guiding Essence | Guiding People, Growing Businesses",
-  description: "People-first workplace transformation that helps organisations build stronger teams, practical AI capability and better ways of working.",
+  title: "Guiding Essence | Guiding People Growing Businesses",
+  description: "Helping businesses grow by empowering people and transforming the way work gets done.",
 };
 
 export default function RootLayout({
