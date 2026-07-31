@@ -1,10 +1,13 @@
 import Image from "next/image";
+import type { LucideIcon } from "lucide-react";
 import {
+  BadgeCheck,
   ChartNoAxesColumnIncreasing,
   ChartPie,
   ClipboardCheck,
   GraduationCap,
   HeartHandshake,
+  Presentation,
   RefreshCw,
   Scale,
   Search,
@@ -22,6 +25,34 @@ const navItems = [
   { label: "Services", href: "#services" },
   { label: "Journey", href: "#journey" },
   { label: "Insights", href: "#insights" },
+];
+
+const trainingCredentials: Array<{
+  lines: string[];
+  tone: string;
+  icon?: LucideIcon;
+  logo?: string;
+}> = [
+  {
+    lines: ["HRD Corp", "Claimable Courses"],
+    icon: BadgeCheck,
+    tone: "teal",
+  },
+  {
+    lines: ["Public &", "In-house Training"],
+    icon: Presentation,
+    tone: "purple",
+  },
+  {
+    lines: ["Team Building"],
+    icon: UsersRound,
+    tone: "teal",
+  },
+  {
+    lines: ["Registered HRD Corp", "Training Provider"],
+    logo: "/assets/hrd-corp-registered-training-provider.webp",
+    tone: "hrd",
+  },
 ];
 
 const helpPillars = [
@@ -168,17 +199,40 @@ function Hero() {
             <span className="hero-tagline-line">Growing <span className="hero-tagline-businesses">Businesses</span></span>
           </h1>
           <p className="hero-lede">
-            <strong>Better workplaces for every growing business.</strong>
-            <span>Helping businesses grow by empowering people and transforming the way work gets done.</span>
+            Practical, hands-on AI training that builds confidence, sharpens everyday skills and helps your team work smarter.
           </p>
-          <a className="button button-primary" href="#contact">Talk to Us <Arrow /></a>
+          <a className="button button-primary" href="#services">Explore Programmes <Arrow /></a>
         </div>
-        <figure className="hero-media gsap-hero-media" data-gsap>
-          <Image src={assetPath("/assets/hero/guiding-team.png")} alt="A small leadership team working together around a table" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
-        </figure>
+        <div className="hero-media-frame gsap-hero-media" data-gsap>
+          <figure className="hero-media">
+            <Image src={assetPath("/assets/hero/in-person-training-malaysia-v4.webp")} alt="A Chinese Malaysian trainer presenting to participants seated in front of a Guiding Essence slide" fill priority sizes="(min-width: 960px) 52vw, 100vw" />
+          </figure>
+        </div>
       </div>
-      <div className="shell confidence-line">
-        <p>Practical AI. Stronger teams. Better workplaces.</p>
+    </section>
+  );
+}
+
+function TrainingCredentials() {
+  return (
+    <section className="training-credentials" aria-label="Training credentials">
+      <div className="shell credential-grid">
+        {trainingCredentials.map(({ lines, icon: Icon, logo, tone }) => (
+          <div className={`credential-item credential-item-${tone}`} key={lines.join(" ")}>
+            {logo ? (
+              <span className="credential-logo-wrap">
+                <Image className="credential-logo" src={assetPath(logo)} alt="HRD Corp Registered Training Provider" width={64} height={64} />
+              </span>
+            ) : Icon ? (
+              <span className="credential-icon" aria-hidden="true">
+                <Icon size={34} strokeWidth={1.8} />
+              </span>
+            ) : null}
+            <p>
+              {lines.map((line) => <span key={line}>{line}</span>)}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -337,5 +391,5 @@ function Footer() {
 }
 
 export default function Home() {
-  return <div className="page-shell"><MotionController /><Header /><main><Hero /><Shift /><WhyUs /><Services /><Journey /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
+  return <div className="page-shell"><MotionController /><Header /><main><Hero /><TrainingCredentials /><Shift /><WhyUs /><Services /><Journey /><Insights /><Testimonials /><Closing /></main><Footer /></div>;
 }
