@@ -242,8 +242,8 @@ function FeaturedProgrammes() {
 
 function WhyGuidingEssence() {
   return (
-    <section id="why-us" className="why-guiding">
-      <div className="shell why-guiding-heading gsap-section-reveal" data-gsap>
+    <section className="why-guiding">
+      <div id="why-us" className="shell why-guiding-heading gsap-section-reveal" data-gsap>
         <p className="programmes-kicker">Why Guiding Essence</p>
         <h2>People-first transformation that delivers results.</h2>
       </div>
