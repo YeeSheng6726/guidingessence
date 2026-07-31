@@ -29,17 +29,17 @@ const trainingCredentials: Array<{
   {
     lines: ["HRD Corp", "Claimable Courses"],
     icon: BadgeCheck,
-    tone: "teal",
+    tone: "jade",
   },
   {
     lines: ["Public &", "In-house Training"],
     icon: Presentation,
-    tone: "purple",
+    tone: "cyan",
   },
   {
     lines: ["Team Building"],
     icon: UsersRound,
-    tone: "teal",
+    tone: "indigo",
   },
   {
     lines: ["Registered HRD Corp", "Training Provider"],
@@ -106,25 +106,25 @@ const reasons = [
     title: "People First",
     description: "We believe transformation starts with people.",
     icon: HeartHandshake,
-    tone: "purple",
+    tone: "violet",
   },
   {
     title: "Practical & Actionable",
     description: "Real tools, real strategies that create real impact.",
     icon: Zap,
-    tone: "blue",
+    tone: "magenta",
   },
   {
     title: "Built for SMEs",
     description: "Solutions that are scalable, affordable and results-driven.",
     icon: Building2,
-    tone: "teal",
+    tone: "jade",
   },
   {
     title: "Real Experience",
     description: "Consultants with deep HR and business experience.",
     icon: Star,
-    tone: "teal",
+    tone: "cyan",
   },
 ];
 
@@ -179,7 +179,7 @@ function TrainingCredentials() {
     <section className="training-credentials" aria-label="Training credentials">
       <div className="shell credential-grid">
         {trainingCredentials.map(({ lines, icon: Icon, logo, tone }) => (
-          <div className={`credential-item credential-item-${tone}`} key={lines.join(" ")}>
+          <div className={`credential-item tone-${tone}`} key={lines.join(" ")}>
             {logo ? (
               <span className="credential-logo-wrap">
                 <Image className="credential-logo" src={assetPath(logo)} alt="HRD Corp Registered Training Provider" width={64} height={64} />
@@ -217,7 +217,7 @@ function FeaturedProgrammes() {
         <a className="carousel-control carousel-control-left" href="#programme-1" aria-label="View previous programmes">‹</a>
         <div className="programme-grid">
           {featuredProgrammes.map((programme, index) => (
-            <article className={`programme-card programme-card-${programme.tone}`} id={`programme-${index + 1}`} key={programme.title}>
+            <article className={`programme-card tone-${programme.tone}`} id={`programme-${index + 1}`} key={programme.title}>
               <div className="programme-image">
                 <Image src={assetPath(programme.image)} alt={programme.alt} fill sizes="(min-width: 1280px) 280px, (min-width: 801px) 20vw, 82vw" />
               </div>
@@ -248,7 +248,7 @@ function WhyGuidingEssence() {
       </div>
       <div className="shell reason-grid">
         {reasons.map(({ title, description, icon: Icon, tone }) => (
-          <article className={`reason reason-${tone}`} key={title}>
+          <article className={`reason tone-${tone}`} key={title}>
             <span className="reason-icon" aria-hidden="true"><Icon size={31} strokeWidth={1.9} /></span>
             <h3>{title}</h3>
             <p>{description}</p>
