@@ -199,7 +199,8 @@ function Hero() {
             <span className="hero-tagline-line">Growing <span className="hero-tagline-businesses">Businesses</span></span>
           </h1>
           <p className="hero-lede">
-            Practical, hands-on AI training that builds confidence, sharpens everyday skills and helps your team work smarter.
+            <strong>Better workplaces for every growing business.</strong>
+            <span>Helping businesses grow by empowering people and transforming the way work gets done.</span>
           </p>
           <a className="button button-primary" href="#services">Explore Programmes <Arrow /></a>
         </div>
