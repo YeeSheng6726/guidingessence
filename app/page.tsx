@@ -200,8 +200,8 @@ function TrainingCredentials() {
 
 function FeaturedProgrammes() {
   return (
-    <section className="featured-programmes">
-      <div id="services" className="shell programmes-heading reveal-on-scroll">
+    <section id="services" className="featured-programmes">
+      <div className="shell programmes-heading reveal-on-scroll">
         <div className="programmes-heading-copy">
           <p className="programmes-kicker">Featured programmes</p>
           <h2>Practical programmes. Real impact.</h2>
@@ -240,8 +240,8 @@ function FeaturedProgrammes() {
 
 function WhyGuidingEssence() {
   return (
-    <section className="why-guiding">
-      <div id="why-us" className="shell why-guiding-heading reveal-on-scroll">
+    <section id="why-us" className="why-guiding">
+      <div className="shell why-guiding-heading reveal-on-scroll">
         <p className="programmes-kicker">Why Guiding Essence</p>
         <h2>People-first transformation that delivers results.</h2>
       </div>
