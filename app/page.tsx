@@ -77,7 +77,7 @@ const featuredProgrammes = [
     outcomes: ["Compensation analysis", "Market benchmarking", "Benefits optimization", "Total rewards insights"],
     image: "/assets/generated/hr-advisory-malaysia.webp",
     alt: "An HR adviser discussing workplace planning with a professional",
-    tone: "orchid",
+    tone: "magenta",
   },
   {
     prefix: "AI for HR:",
@@ -97,7 +97,7 @@ const featuredProgrammes = [
     outcomes: ["Covers all key HR areas", "Practical tools & frameworks", "Real-world applications", "Certificate of completion"],
     image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
     alt: "A Malaysian team applying practical workplace transformation tools",
-    tone: "blue",
+    tone: "indigo",
   },
 ];
 
