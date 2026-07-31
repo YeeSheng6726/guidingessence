@@ -23,7 +23,7 @@ nav a { font-weight: 700; }
 nav a, .nav-contact { transition: color .2s ease, transform .2s ease; }
 nav a:hover, .nav-contact:hover { color: var(--accent); }
 .nav-contact { border-bottom: 1px solid var(--ink); padding-bottom: .18rem; font-size: .88rem; font-weight: 600; }
-.hero { min-height: min(620px, calc(100dvh - 78px)); display: grid; align-content: center; padding: 3.5rem 0 2.25rem; }
+.hero { min-height: min(620px, calc(100dvh - 214px)); display: grid; align-content: center; padding: 2.25rem 0 1.5rem; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(2.5rem, 5vw, 5rem); }
 .hero-copy { padding: 1rem 0; }
 h1, h2, h3, p { margin-top: 0; }
