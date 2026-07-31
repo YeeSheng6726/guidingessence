@@ -2,7 +2,6 @@ import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
-  BadgeCheck,
   Building2,
   HeartHandshake,
   MessageCircle,
@@ -28,7 +27,7 @@ const trainingCredentials: Array<{
 }> = [
   {
     lines: ["HRD Corp", "Claimable Courses"],
-    icon: BadgeCheck,
+    logo: "/assets/hrd-corp-claimable.webp",
     tone: "jade",
   },
   {
@@ -182,7 +181,7 @@ function TrainingCredentials() {
           <div className={`credential-item tone-${tone}`} key={lines.join(" ")}>
             {logo ? (
               <span className="credential-logo-wrap">
-                <Image className="credential-logo" src={assetPath(logo)} alt="HRD Corp Registered Training Provider" width={64} height={64} />
+                <Image className="credential-logo" src={assetPath(logo)} alt={lines.join(" ")} width={64} height={64} />
               </span>
             ) : Icon ? (
               <span className="credential-icon" aria-hidden="true">
