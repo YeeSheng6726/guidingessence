@@ -272,7 +272,7 @@ function ProgrammeCallToAction() {
           </a>
         </div>
         <div className="programme-cta-image">
-          <Image src={assetPath("/assets/hero/guiding-team.png")} alt="A Malaysian workplace team discussing ideas around a laptop" fill sizes="(min-width: 801px) 58vw, 100vw" />
+          <Image src={assetPath("/assets/hero/guiding-team.webp")} alt="A Malaysian workplace team discussing ideas around a laptop" fill sizes="(min-width: 801px) 58vw, 100vw" />
         </div>
       </div>
     </section>
