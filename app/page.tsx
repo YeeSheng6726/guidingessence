@@ -57,7 +57,7 @@ const featuredProgrammes = [
     outcomes: ["Automate repetitive tasks", "Create content faster", "Organize information", "Improve accuracy"],
     image: "/assets/generated/ai-learning-malaysia.webp",
     alt: "A facilitator leading a practical workplace learning session",
-    tone: "purple",
+    tone: "violet",
   },
   {
     prefix: "AI for HR:",
@@ -67,7 +67,7 @@ const featuredProgrammes = [
     outcomes: ["Smart sourcing", "Resume screening", "Interview support", "Candidate experience"],
     image: "/assets/generated/recruitment-malaysia.webp",
     alt: "A recruitment adviser speaking with a candidate",
-    tone: "teal",
+    tone: "mint",
   },
   {
     prefix: "AI for HR:",
@@ -77,7 +77,7 @@ const featuredProgrammes = [
     outcomes: ["Compensation analysis", "Market benchmarking", "Benefits optimization", "Total rewards insights"],
     image: "/assets/generated/hr-advisory-malaysia.webp",
     alt: "An HR adviser discussing workplace planning with a professional",
-    tone: "orange",
+    tone: "orchid",
   },
   {
     prefix: "AI for HR:",
@@ -97,7 +97,7 @@ const featuredProgrammes = [
     outcomes: ["Covers all key HR areas", "Practical tools & frameworks", "Real-world applications", "Certificate of completion"],
     image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
     alt: "A Malaysian team applying practical workplace transformation tools",
-    tone: "violet",
+    tone: "cyan",
   },
 ];
 
