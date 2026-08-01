@@ -52,7 +52,6 @@ const featuredProgrammes = [
     prefix: "AI for HR:",
     title: "Work Smarter",
     subtitle: "Everyday Productivity",
-    description: "Boost everyday productivity with practical AI tools for HR operations, communication, documentation, and workflow automation.",
     outcomes: ["Automate repetitive tasks", "Create content faster", "Organize information", "Improve accuracy"],
     image: "/assets/generated/ai-learning-malaysia.webp",
     alt: "A facilitator leading a practical workplace learning session",
@@ -62,7 +61,6 @@ const featuredProgrammes = [
     prefix: "AI for HR:",
     title: "Hire Smarter",
     subtitle: "Talent Acquisition",
-    description: "Transform your recruitment process using AI for sourcing, screening, interviewing, and candidate engagement.",
     outcomes: ["Smart sourcing", "Resume screening", "Interview support", "Candidate experience"],
     image: "/assets/generated/recruitment-malaysia.webp",
     alt: "A recruitment adviser speaking with a candidate",
@@ -72,7 +70,6 @@ const featuredProgrammes = [
     prefix: "AI for HR:",
     title: "Reward Smarter",
     subtitle: "Compensation & Benefits",
-    description: "Leverage AI to streamline compensation, benefits, job evaluation, salary benchmarking, and total rewards planning.",
     outcomes: ["Compensation analysis", "Market benchmarking", "Benefits optimization", "Total rewards insights"],
     image: "/assets/generated/hr-advisory-malaysia.webp",
     alt: "An HR adviser discussing workplace planning with a professional",
@@ -82,7 +79,6 @@ const featuredProgrammes = [
     prefix: "AI for HR:",
     title: "Lead Smarter",
     subtitle: "Strategic HR",
-    description: "Use AI to support strategic HR, workforce planning, performance management, and data-driven decision making.",
     outcomes: ["Workforce planning", "People analytics", "Performance insights", "Strategic decision support"],
     image: "/assets/generated/vision-mission-malaysia.webp",
     alt: "A Malaysian leadership team discussing workplace strategy",
@@ -92,7 +88,6 @@ const featuredProgrammes = [
     prefix: "Advanced Certificate in",
     title: "AI for Human Capital Management",
     subtitle: null,
-    description: "A comprehensive programme covering AI across the HR function — from operational excellence to strategic workforce transformation.",
     outcomes: ["Covers all key HR areas", "Practical tools & frameworks", "Real-world applications", "Certificate of completion"],
     image: "/assets/generated/ai-workplace-transformation-malaysia.webp",
     alt: "A Malaysian team applying practical workplace transformation tools",
@@ -205,10 +200,6 @@ function FeaturedProgrammes() {
         <div className="programmes-heading-copy">
           <p className="programmes-kicker">Featured programmes</p>
           <h2>Practical programmes. Real impact.</h2>
-          <p className="programmes-subtitle">
-            <span>Choose the programme that best matches your role, priorities, or business needs.</span>
-            <span>Each programme is designed as a standalone learning experience.</span>
-          </p>
         </div>
       </div>
 
@@ -223,7 +214,6 @@ function FeaturedProgrammes() {
               <div className="programme-content">
                 <h3><span>{programme.prefix}</span><strong>{programme.title}</strong></h3>
                 <p className="programme-subtitle" aria-hidden={programme.subtitle ? undefined : true}>{programme.subtitle ?? "\u00a0"}</p>
-                <p className="programme-description">{programme.description}</p>
                 <ul className="programme-outcomes">
                   {programme.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}
                 </ul>
