@@ -255,7 +255,7 @@ function ProgrammeCallToAction() {
         <div className="programme-cta-copy">
           <h2>Ready to build<br />a better workplace?</h2>
           <p>Let&apos;s find the right programme or solution for your business.</p>
-          <a className="whatsapp-button" href="https://wa.me/" target="_blank" rel="noreferrer">
+          <a className="whatsapp-button" href="https://wa.me/601116725868" target="_blank" rel="noreferrer">
             <MessageCircle size={22} strokeWidth={2} aria-hidden="true" /> WhatsApp Us
           </a>
         </div>
