@@ -16,7 +16,7 @@ const assetPath = (path: string) => `${basePath}${path}`;
 
 const navItems = [
   { label: "Why us", href: "#why-us" },
-  { label: "Services", href: "#services" },
+  { label: "Programmes", href: "#services" },
 ];
 
 const trainingCredentials: Array<{
@@ -268,7 +268,7 @@ function ProgrammeCallToAction() {
 }
 
 function Footer() {
-  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#services">Services</a><a href="#contact">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
+  return <footer><div className="shell footer-content"><div><strong>Guiding Essence</strong><p>Guiding People Growing Businesses</p></div><div className="footer-links"><a href="#why-us">Why us</a><a href="#services">Programmes</a><a href="#contact">Contact</a></div><div className="footer-links"><a href="https://www.linkedin.com/company/guiding-essence/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/guidingessence.co/" target="_blank" rel="noreferrer">Instagram</a></div></div><div className="shell copyright">© 2026 Guiding Essence. All rights reserved.</div></footer>;
 }
 
 export default function Home() {
