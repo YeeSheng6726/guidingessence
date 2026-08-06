@@ -7,7 +7,7 @@ import {
   MessageCircle,
   Presentation,
   Star,
-  UsersRound,
+  UserRoundPlus,
   Zap,
 } from "lucide-react";
 
@@ -36,8 +36,8 @@ const trainingCredentials: Array<{
     tone: "cyan",
   },
   {
-    lines: ["Team Building"],
-    icon: UsersRound,
+    lines: ["Talent Placement"],
+    icon: UserRoundPlus,
     tone: "indigo",
   },
   {
